@@ -1,0 +1,20 @@
+{
+  "name": "EmpireFrenzy",
+  "version": "1.0.0",
+  "description": "An online multiplayer spin-off of the popular Monopoly Deal card game.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "moment": "^2.29.1",
+    "socket.io": "^3.1.1",
+    "websocket": "^1.0.33"
+  }
+}

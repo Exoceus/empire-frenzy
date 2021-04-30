@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  background-color: #fff;
+  --accent: #7dc3d9;
+  --dark: #2a2a2f;
+  --green: #94f085;
+  --red: #e96767;
+  --light: #fff;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", sans-serif;
+  color: var(--dark);
+}
+
+button {
+  cursor: pointer;
+}
+
+.join-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  background-color: var(--accent);
+  border: 3px solid var(--accent);
+  min-width: 360px;
+}
+
+.join-box-wrapper {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+}
+
+.join-input {
+  margin: 1rem 0;
+  width: 100%;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.15rem;
+  outline: none;
+}
+
+.join-button {
+  width: 100%;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: var(--dark);
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.15rem;
+  outline: none;
+  text-transform: uppercase;
+  margin: 1rem 0 0 0;
+  font-weight: 800;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.waiting-room-page-wrapper {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
+.join-box-heading {
+  color: var(--light);
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+}
+
+.waiting-room-page-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.waiting-room-heading {
+  font-weight: 800;
+  text-align: center;
+  color: var(--light);
+  font-size: 2rem;
+  background-color: var(--accent);
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.waiting-room-main-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5rem 1fr;
+}
+
+.waiting-room-body {
+  padding: 1rem;
+  display: grid;
+  align-content: space-between;
+}
+
+.waiting-room-button {
+  width: 100%;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: var(--dark);
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.15rem;
+  outline: none;
+  text-transform: uppercase;
+  margin: 1rem 0 0 0;
+  font-weight: 800;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.game-screen-wrapper {
+  display: grid;
+  grid-template-columns: 77% 23%;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
+.game-screen-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.game-area-wrapper {
+  display: grid;
+  grid-template-rows: 67% 12% 21%;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.game-area-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.opponent-view {
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(8, 50%);
+  overflow-x: scroll;
+}
+
+.game-view {
+  overflow-y: scroll;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.personal-view {
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.chat-view-wrapper {
+  overflow-y: scroll;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3rem;
+  border-left: 3px solid var(--accent);
+}
+
+.chat-view-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-messages {
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.chat-messages-wrapper {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chat-messages-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-message-item {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  margin: 0.75rem 0.5rem;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+.chat-input-wrapper {
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  border-top: 2px solid var(--accent);
+}
+
+.game-area-container {
+  border-bottom: 3px solid var(--accent);
+  overflow: scroll;
+  max-height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.game-area-container:last-child {
+  border-bottom: none;
+}
+
+.game-overview-container::-webkit-scrollbar {
+  display: none;
+}
+
+.opponent-view {
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  padding: 2px;
+}
+
+.chat-send-button {
+  border: none;
+  background-color: var(--accent);
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.game-overview-container {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  column-gap: 2%;
+}
+
+.end-turn-button {
+  width: 100%;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: var(--dark);
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.15rem;
+  outline: none;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.chat-input {
+  border: none;
+  font-family: "Work Sans", sans-serif;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.modal-main {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+}
+
+.modal-content-wrapper {
+  position: relative;
+  background: white;
+  border-radius: 0.5rem;
+}
+
+.modal-close {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  border: 2px solid var(--light);
+  height: 1.75rem;
+  width: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--light);
+  font-size: 1.15rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--accent);
+  border-radius: 0.5rem 0.5rem 0 0;
+  box-sizing: border-box;
+}
+
+.modal-body {
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--light);
+  letter-spacing: 1px;
+  margin: 0.5rem 0;
+}
+
+.player-list-wrapper {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  column-gap: 2%;
+  font-size: 1.15rem;
+  margin: 0 0 2rem 0;
+  row-gap: 1rem;
+}
+
+.waiting-room-lobby-code-wrapper {
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+}
+
+.waiting-room-lobby-code {
+  margin: 0 0 0 1rem;
+  padding: 0.5rem 2rem;
+  border: 4px solid var(--accent);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.timer-wrapper {
+  font-size: 1.25rem;
+}
+
+.property-set-heading {
+  margin: 0.75rem 0 0.25rem 0;
+}
+
+.game-card-section-heading {
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0.75rem 0;
+}
+
+.overall-game-card-heading {
+  margin: 0 0 0.75rem;
+}
+
+.card-img-wrapper {
+  width: 3.5rem;
+}
+
+.cash-section {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.card-wrapper {
+  display: inline-block;
+  margin: 0 0.5rem 0 0;
+  position: relative;
+}
+
+.card-play-options {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 800;
+}
+
+.card-wrapper:hover .card-play-options {
+  opacity: 1;
+}
+
+.card-wrapper:hover .card-img-wrapper {
+  opacity: 0.75;
+}
+
+.card-play-option-button {
+  border: none;
+  background-color: var(--accent);
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  color: var(--light);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.opponent-play-area-horizontal {
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(8, 50%);
+  overflow-x: scroll;
+}
