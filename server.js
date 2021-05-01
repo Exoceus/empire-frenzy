@@ -104,6 +104,14 @@ io.on('connect', (socket) => {
         shiftTurn(gameID, io)
     });
 
+    //receive if client wants to end turn early
+    socket.on('winner', (completedSets) => {
+        console.log(completedSets)
+
+        io.to(gameID).emit('winner_found', { playerID, playerName});
+    });
+
+
     //client sends disconnect request when the client component is dismounted. If no players left in the game, the game is ended
     socket.on('disconnect', () => {
         removePlayer(playerID, gameID)

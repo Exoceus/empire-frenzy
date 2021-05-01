@@ -59,6 +59,9 @@ const Room = ({ location }) => {
 
     const [opponentAction, setOpponentAction] = useState('');
 
+    const [completedSets, setCompletedSets] = useState([]);
+    const [winner, setWinner] = useState(null);
+
     const ENDPOINT = 'http://localhost:5000'
 
 
@@ -192,6 +195,16 @@ const Room = ({ location }) => {
         }
     }, [])
 
+    //receiving winner found
+    useEffect(() => {
+        socket.on('winner_found', (data) => {
+            setWinner(data)
+        })
+        return () => {
+            socket.off()
+        }
+    }, [])
+
     //checking cash request
     useEffect(() => {
         if(checkCashRequest){
@@ -226,6 +239,7 @@ const Room = ({ location }) => {
         }
     }, [chances])
 
+    //set timer
     useEffect(() => {
         let interval = null;
 
@@ -249,6 +263,13 @@ const Room = ({ location }) => {
             setChances(chances - 1)
         }
     }, [cardSelect])
+
+    //set timer
+    useEffect(() => {
+        if(completedSets.length >= 3){
+            socket.emit('winner', completedSets)
+        }
+      }, [completedSets]);
 
     //sending messages
     const sendChatMessage = (event) => {
@@ -348,8 +369,7 @@ const Room = ({ location }) => {
     }
 
     if (personalPlayed.length === 1) {
-        var personal_played = <PersonalPlayArea cards={personalPlayed[0].played} />
-
+        var personal_played = <PersonalPlayArea cards={personalPlayed[0].played} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
     }
 
     if (opponentPlayed.length > 0) {
@@ -380,6 +400,8 @@ const Room = ({ location }) => {
         var actionModal = <CashRequestModal cashSelect={cashSelect} setCashSelect={setCashSelect} sendOpponentActionResponse={sendOpponentActionResponse} sendCashPayment={sendCashPayment} cashRequest={cashRequest} personalPlayed={personalPlayed} hand={hand}/>
     }
 
+    console.log(completedSets)
+
     //waiting room component
     if( gameStatus === 'waiting'){
         return(
@@ -387,6 +409,21 @@ const Room = ({ location }) => {
         )
     }
 
+    else if(winner){
+        return(
+            <div className='winner-screen-wrapper'>
+                <div>
+                    <div className='winner-screen-subtitle'>Game Over</div>
+                    <div className='winner-screen-title'>{(winner.playerID === playerID) ? "You have won!" : winner.playerName + " has won!"}</div>
+                </div>
+                <Link to="/" className='winner-screen-button-wrapper' onClick={leaveGame}>
+                <i className="fas fa-sign-out-alt"></i> Go Back Home
+                </Link>
+            </div>
+        )
+    }
+
+    //game component
     else{
         return(
         <div className="game-screen-wrapper">

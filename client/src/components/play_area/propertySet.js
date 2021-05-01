@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 
-const PropertySet = ({ properties, cardSelection, playerID, setName, setNum, propertyImage }) => {
+const PropertySet = ({ properties, cardSelection, playerID, setName, setNum, propertyImage, setCompletedSets,completedSets }) => {
 
     const handleClick = (index) => {
         cardSelection({index, playerID})
@@ -29,6 +29,18 @@ const PropertySet = ({ properties, cardSelection, playerID, setName, setNum, pro
         set_amt = 3
     } else if(setNum === 10){
         set_amt = 2
+    }
+
+    if(properties.length >= set_amt && setCompletedSets && set_amt > 0){
+        if(!completedSets.includes(setName)){
+            setCompletedSets(oldArray => [...oldArray, setName]);
+        }
+    }
+
+    else if(setCompletedSets && completedSets){
+        if(completedSets.includes(setName)){
+            setCompletedSets(completedSets.filter(item => item !== setName));
+        }
     }
 
     if(properties.length > 0){
