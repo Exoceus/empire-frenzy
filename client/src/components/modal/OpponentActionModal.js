@@ -1,6 +1,23 @@
 import React from 'react'
 
-export default function OpponentActionModal({opponentAction, sendOpponentActionResponse, hand}) {
+import PropertyCard from '../cards/propertyCards'
+
+export default function OpponentActionModal({opponentAction, sendOpponentActionResponse, hand, properties}) {
+
+    if(opponentAction.action.type === 'sly_deal'){
+        var opening_line = <div>The following property was requested: <br /><br /></div>
+
+        var card = <PropertyCard card={properties[opponentAction.action.card_index]}/>
+    }
+
+    else if(opponentAction.action.type === 'fbi_raid'){
+        var opening_line = <div>The following property set was requested: <br /><br /></div>
+
+        var card = <PropertyCard card={{type: 'property',cash_value: 'N/A',set: opponentAction.action.setNum}}/>
+    }
+
+
+
     return (
         <div className='modal'>
             <div className="modal-main">
@@ -16,6 +33,12 @@ export default function OpponentActionModal({opponentAction, sendOpponentActionR
                     
                     <div className='modal-body'>
 
+
+                        {opening_line}
+
+
+                        {card}
+                        
                     
                     <button className='waiting-room-button' onClick={e => sendOpponentActionResponse(e, false)}> Allow Action</button>
                     

@@ -13,7 +13,7 @@ import CardImgPurple from '../../assets/Cards/Cards_Property/Purple/Purple-1.svg
 import CardImgRed from '../../assets/Cards/Cards_Property/Red/Red-1.svg'
 import CardImgYellow from '../../assets/Cards/Cards_Property/Yellow/Yellow-1.svg'
 
-const PropertyView = ({ properties, cardSelection, playerID, setCompletedSets,completedSets }) => {
+const PropertyView = ({ properties, cardSelection, playerID, setCompletedSets,completedSets, propertiesCashSelect, setPropertiesCashSelect, setPropertySetSelect }) => {
 
     const set_1 = properties.map((property, index) => {
         property.index = index
@@ -88,16 +88,16 @@ const PropertyView = ({ properties, cardSelection, playerID, setCompletedSets,co
     return (
             <div>
                 <h4  className='game-card-section-heading'>Properties</h4>
-                <PropertySet properties={set_1} setNum={1} setName='Blue' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgBlue} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_2} setNum={2} setName='Navy' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgNavy} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_3} setNum={3} setName='Purple' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgPurple} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_4} setNum={4} setName='Pink' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgPink} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_5} setNum={5} setName='Red' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgRed} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_6} setNum={6} setName='Orange' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgOrange} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_7} setNum={7} setName='Yellow' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgYellow} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_8} setNum={8} setName='Lime' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgLime} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_9} setNum={9} setName='Green' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgGreen} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
-                <PropertySet properties={set_10} setNum={10} setName='Cyan' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgCyan} setCompletedSets={setCompletedSets} completedSets={completedSets}/>
+                <PropertySet properties={set_1} setNum={1} setName='Blue' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgBlue} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_2} setNum={2} setName='Navy' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgNavy} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_3} setNum={3} setName='Purple' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgPurple} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_4} setNum={4} setName='Pink' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgPink} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_5} setNum={5} setName='Red' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgRed} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_6} setNum={6} setName='Orange' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgOrange} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_7} setNum={7} setName='Yellow' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgYellow} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_8} setNum={8} setName='Lime' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgLime} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_9} setNum={9} setName='Green' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgGreen} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
+                <PropertySet properties={set_10} setNum={10} setName='Cyan' cardSelection={cardSelection} playerID={playerID} propertyImage={CardImgCyan} setCompletedSets={setCompletedSets} completedSets={completedSets} propertiesCashSelect={propertiesCashSelect} setPropertiesCashSelect={setPropertiesCashSelect} setPropertySetSelect={setPropertySetSelect} />
             </div>
         );
     

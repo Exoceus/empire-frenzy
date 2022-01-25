@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from "react";
 
-import PersonalPlayArea from "./personal_play_area"
+import PersonalPlayArea from "./personal_play_area";
 
-const OpponentPlayArea = ({ opponent_played, setCardSelect}) => {
-
-    return (
-        <>
-            {opponent_played.map((player, i) => <PersonalPlayArea cards={player.played} playerName={player.playerName} cardSelection={setCardSelect} playerID={player.playerID}/>)}
-        </>
-    );
+const OpponentPlayArea = ({
+  opponent_played,
+  setCardSelect,
+  setPropertySetSelect,
+}) => {
+  return (
+    <>
+      {opponent_played.map((player, i) => (
+        <PersonalPlayArea
+          cards={player.played}
+          playerName={player.playerName}
+          cardSelection={setCardSelect}
+          playerID={player.playerID}
+          colorID={player.colorID}
+          setPropertySetSelect={setPropertySetSelect}
+        />
+      ))}
+    </>
+  );
 };
 
 export default OpponentPlayArea;

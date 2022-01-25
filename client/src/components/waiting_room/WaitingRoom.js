@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 import ChatInput from '../chat/chatInput'
 
 export default function WaitingRoom({chatDisplay, chatMessage, setChatMessage, sendChatMessage, leaveGame, sendReadyStatus, gameStatus, playerList, room, name,ready}) {
+
+    if(ready){
+        var button_style = {backgroundColor: 'var(--accent)', color: 'var(--light)'}
+    }
+
     return (
         <div className='waiting-room-page-wrapper'>
-
+                
                 <div className="waiting-room-main-wrapper">
                     <h1 className="waiting-room-heading">Waiting Room</h1>
                     <div className='waiting-room-body'>
@@ -20,7 +25,7 @@ export default function WaitingRoom({chatDisplay, chatMessage, setChatMessage, s
                         </div>
                         <div>
                             {
-                            (gameStatus === 'waiting') ? <button className='waiting-room-button' onClick={e => sendReadyStatus(e)} title="Game only starts when all players are ready">{(ready === true) ? "Unready" : "Ready"}</button> : null
+                            (gameStatus === 'waiting') ? <button className='waiting-room-button' style={button_style} onClick={e => sendReadyStatus(e)} title="Game only starts when all players are ready">{(ready === true) ? "Unready" : "Ready"}</button> : null
                             }
 
                 

@@ -3,6 +3,8 @@ import queryString from 'query-string';
 import io from "socket.io-client";
 import { Link } from "react-router-dom";
 
+import JoinLogo from '../assets/Join Logo.svg'
+
 let socket;
 
 const Join = () => {
@@ -10,10 +12,10 @@ const Join = () => {
     const [room, setRoom] = useState('');
 
     return (
-        <div>
+        <div className='join-wrapper'>
             <div className="join-box"> 
                 <div className="join-box-wrapper">
-                <h1 className="join-box-heading">Join</h1>
+                    <img src={JoinLogo} className='join-logo-wrapper' alt='Game Logo' />
                     <div>
                         <input placeholder="Name" className="join-input" type="text" onChange={(event) => setName(event.target.value)} />
                     </div>
